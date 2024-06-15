@@ -1,0 +1,107 @@
+.main-functions-layout301 {
+  gap: var(--dl-space-space-fiveunits);
+  width: 100%;
+  height: auto;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+.main-functions-max-width {
+  gap: var(--dl-space-space-threeunits);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.main-functions-text {
+  text-align: center;
+}
+.main-functions-row {
+  width: 100%;
+}
+.main-functions-feature1 {
+  gap: var(--dl-space-space-twounits);
+  flex: 1;
+  width: auto;
+  display: flex;
+  overflow: hidden;
+  max-width: 600px;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.main-functions-content {
+  align-self: stretch;
+  align-items: center;
+}
+.main-functions-section-title {
+  align-self: stretch;
+  align-items: center;
+}
+.main-functions-title1 {
+  text-align: center;
+}
+.main-functions-description1 {
+  text-align: center;
+}
+.main-functions-action {
+  align-self: stretch;
+  align-items: stretch;
+  justify-content: center;
+}
+.main-functions-feature2 {
+  gap: var(--dl-space-space-twounits);
+  flex: 1;
+  width: auto;
+  display: flex;
+  overflow: hidden;
+  max-width: 600px;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.main-functions-content1 {
+  align-self: stretch;
+  align-items: center;
+}
+.main-functions-section-title1 {
+  align-self: stretch;
+  align-items: center;
+}
+.main-functions-title2 {
+  text-align: center;
+}
+.main-functions-description2 {
+  text-align: center;
+}
+.main-functions-action1 {
+  align-self: stretch;
+  align-items: stretch;
+  justify-content: center;
+}
+@media(max-width: 991px) {
+  .main-functions-row {
+    width: auto;
+    align-items: center;
+    flex-direction: column;
+  }
+  .main-functions-feature1 {
+    width: 100%;
+  }
+  .main-functions-feature2 {
+    width: 100%;
+  }
+}
+@media(max-width: 767px) {
+  .main-functions-text {
+    text-align: center;
+  }
+}
+@media(max-width: 479px) {
+  .main-functions-max-width {
+    gap: var(--dl-space-space-oneandhalfunits);
+  }
+}
