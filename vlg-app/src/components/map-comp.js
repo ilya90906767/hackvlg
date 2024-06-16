@@ -1,12 +1,10 @@
 import React from 'react'
 
-import PropTypes from 'prop-types'
-
 import './map-comp.css'
 import Map from './2gismap'
 
 
-const MapComp = (props) => {
+const MapComp = ( {heading1 = 'Построение маршрута', ...restProps} ) => {
 
   return (
     <div className="map-comp-header5 thq-section-padding">
@@ -24,14 +22,6 @@ const MapComp = (props) => {
       </div>
     </div>
   )
-}
-
-MapComp.defaultProps = {
-  heading1: 'Построение маршрута',
-}
-
-MapComp.propTypes = {
-  heading1: PropTypes.string,
 }
 
 export default MapComp

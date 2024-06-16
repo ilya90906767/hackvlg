@@ -1,44 +1,31 @@
 import React, { useContext, useState } from 'react';
 
 
-import PropTypes from 'prop-types'
 import {RouteContext} from '../contexts/geocodeContext'
 import './map-settings.css'
+import Search2GIS from "./Serch2GIS";
+import {saveRoute} from "../api";
 
-const MapSettings = (props) => {
-  const apiKey = '59e2dcbb-0312-4a54-96be-6b683a17331d';
-  const apiUrl = 'http://routing.api.2gis.com/routing/7.0.0/global';
-  const [firstPoint, setFirstPoint] = useState({ lon: 37.582591, lat: 55.775364 });
-  const [secondPoint, setSecondPoint] = useState({ lon: 37.579206, lat: 55.774362 });
+const MapSettings = ( props ) => {
 
+  const { removeLastPoint, clearPoints, points} = useContext( RouteContext );
 
+  props = {
+    content1: 'Постройте свой маршрут на интерактивной карте города',
+    heading1: 'Ваш маршрут',
+    action: 'Построить',
+    button: 'Добавить пункт',
+    ...props
+  }
 
-
-  const handleBuildRoute = () => {
-    console.log('Start')
-    const requestBody = {
-      points: [
-        { type: 'stop', lon: firstPoint.lon, lat: firstPoint.lat },
-        { type: 'stop', lon: secondPoint.lon, lat: secondPoint.lat },
-      ],
-      locale: 'ru',
-      transport: 'car',
-      route_mode: 'fastest',
-      traffic_mode: 'jam',
-    };
-
-    fetch(`${apiUrl}?key=${apiKey}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(requestBody),
-    })
-      .then(response => response.json())
-   .then(data => {
-      console.log('Response data:', data); // Add this line
-    })
-      .catch(error => console.error(error));
-  
+  const [inputValue, setInputValue] = useState('');
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
   };
+
+  async function handlerSaveRoute() {
+    await saveRoute( points );
+  }
 
   return (
     <div className="map-settings-contact11 thq-section-padding">
@@ -51,18 +38,6 @@ const MapSettings = (props) => {
         </div>
         <div className="map-settings-content1">
           <form className="map-settings-form thq-card">
-            <div className="map-settings-input">
-              <input 
-                type="text"
-                id="contact-form-9-email"
-                required="true"
-                placeholder="Введите пункт назначения"
-                className="thq-input"
-              />
-              <button type="button" className="button map-settings-button">
-                {props.button}
-              </button>
-            </div>
             <div className="map-settings-container">
               <div className="map-settings-input1">
                 <label
@@ -85,32 +60,54 @@ const MapSettings = (props) => {
                 </select>
               </div>
             </div>
-            <button
-              type="submit"
-              className="thq-button-filled map-settings-button1"
-              onClick={handleBuildRoute}
+            <div className="map-settings-input">
+              <Search2GIS />
+              <div>
+
+                {/*<button type="button" className="button map-settings-button">*/}
+                {/*  {props.button}*/}
+                {/*</button>*/}
+
+              </div>
+
+            </div>
+            {/*<div>*/}
+{/*            <button
+                disabled={!inputValue}
+                type="button"
+                className="thq-button-filled map-settings-button1"
+                onClick={ addPointFromAddress }
             >
-              <span className="thq-body-small">{props.action}</span>
+              <span className="thq-body-small">Добавить</span>
+            </button>*/}
+              <button
+                  type="button"
+                  className="thq-button-filled map-settings-button1"
+                  onClick={ clearPoints }
+              >
+                <span className="thq-body-small">Очистить</span>
+              </button>
+              <button
+                  type="button"
+                  className="thq-button-filled map-settings-button1"
+                  onClick={ removeLastPoint }
+              >
+                <span className="thq-body-small">Назад</span>
+              </button>
+            <button
+                type="button"
+                className="thq-button-filled map-settings-button2"
+                onClick={ handlerSaveRoute }
+            >
+              <span className="thq-body-small">Сохранить маршрут</span>
             </button>
+
+            {/*</div>*/}
           </form>
         </div>
       </div>
     </div>
   )
-}
-
-MapSettings.defaultProps = {
-  content1: 'Постройте свой маршрут на интерактивной карте города',
-  heading1: 'Ваш маршрут',
-  action: 'Построить',
-  button: 'Добавить пункт',
-}
-
-MapSettings.propTypes = {
-  content1: PropTypes.string,
-  heading1: PropTypes.string,
-  action: PropTypes.string,
-  button: PropTypes.string,
 }
 
 export default MapSettings

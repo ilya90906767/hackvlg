@@ -5,6 +5,14 @@ import PropTypes from 'prop-types'
 import './sign-in9.css'
 
 const SignIn9 = (props) => {
+  props = {
+    rootClassName: '',
+    heading1: 'Войти',
+    action1: 'Войти',
+    action2: 'Create an account',
+    content1: "Don't have an account?",
+    ...props
+  }
   return (
     <div
       className={`sign-in9-container thq-section-padding ${props.rootClassName} `}
@@ -75,22 +83,6 @@ const SignIn9 = (props) => {
       </div>
     </div>
   )
-}
-
-SignIn9.defaultProps = {
-  rootClassName: '',
-  heading1: 'Войти',
-  action1: 'Войти',
-  action2: 'Create an account',
-  content1: "Don't have an account?",
-}
-
-SignIn9.propTypes = {
-  rootClassName: PropTypes.string,
-  heading1: PropTypes.string,
-  action1: PropTypes.string,
-  action2: PropTypes.string,
-  content1: PropTypes.string,
 }
 
 export default SignIn9

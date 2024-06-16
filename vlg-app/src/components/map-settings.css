@@ -1,106 +1,126 @@
 .map-settings-contact11 {
-    gap: var(--dl-space-space-threeunits);
-    display: flex;
-    overflow: hidden;
-    position: relative;
-    flex-direction: column;
-  }
-  .map-settings-max-width {
-    display: flex;
-    flex-direction: column;
-  }
-  .map-settings-section-title {
-    gap: var(--dl-space-space-unit);
-    display: flex;
-    flex-direction: column;
-  }
-  .map-settings-content {
-    gap: var(--dl-space-space-oneandhalfunits);
-    display: flex;
-    align-self: stretch;
-    align-items: flex-start;
-    flex-direction: column;
-  }
-  .map-settings-content1 {
-    display: flex;
-    align-self: stretch;
-    align-items: flex-start;
-  }
+  gap: var(--dl-space-space-threeunits);
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  flex-direction: column;
+}
+.map-settings-max-width {
+  display: flex;
+  flex-direction: column;
+}
+.map-settings-section-title {
+  gap: var(--dl-space-space-unit);
+  display: flex;
+  flex-direction: column;
+}
+.map-settings-content {
+  gap: var(--dl-space-space-oneandhalfunits);
+  display: flex;
+  align-self: stretch;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.map-settings-content1 {
+  display: flex;
+  align-self: stretch;
+  align-items: flex-start;
+}
+.map-settings-form {
+  gap: var(--dl-space-space-oneandhalfunits);
+  flex: 1;
+  width: auto;
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.map-settings-input {
+  gap: var(--dl-space-space-halfunit);
+  display: flex;
+  align-self: stretch;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.map-settings-container {
+  flex: 0 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.map-settings-input1 {
+  gap: var(--dl-space-space-halfunit);
+  display: flex;
+  align-self: stretch;
+  align-items: flex-start;
+  flex-direction: column;
+}
+@media(max-width: 991px) {
   .map-settings-form {
-    gap: var(--dl-space-space-oneandhalfunits);
-    flex: 1;
-    width: auto;
-    display: flex;
-    align-items: flex-start;
-    flex-shrink: 0;
-    flex-direction: column;
-  }
-  .map-settings-input {
-    gap: var(--dl-space-space-halfunit);
-    display: flex;
-    align-self: stretch;
-    align-items: flex-start;
-    flex-direction: column;
+    width: 50%;
   }
   .map-settings-container {
-    flex: 0 0 auto;
+    gap: var(--dl-space-space-twounits);
     width: 100%;
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
+    flex-direction: row;
   }
   .map-settings-input1 {
     gap: var(--dl-space-space-halfunit);
-    display: flex;
-    align-self: stretch;
-    align-items: flex-start;
+    width: 100%;
     flex-direction: column;
   }
-  @media(max-width: 991px) {
-    .map-settings-form {
-      width: 50%;
-    }
-    .map-settings-container {
-      gap: var(--dl-space-space-twounits);
-      width: 100%;
-      flex-direction: row;
-    }
-    .map-settings-input1 {
-      gap: var(--dl-space-space-halfunit);
-      width: 100%;
-      flex-direction: column;
-    }
+}
+@media(max-width: 767px) {
+  .map-settings-input1 {
+    width: 100%;
   }
-  @media(max-width: 767px) {
-    .map-settings-input1 {
-      width: 100%;
-    }
+}
+@media(max-width: 479px) {
+  .map-settings-content {
+    position: relative;
   }
-  @media(max-width: 479px) {
-    .map-settings-content1 {
-      flex-direction: column;
-    }
-    .map-settings-form {
-      width: 100%;
-    }
-    .map-settings-button {
-      font-size: 11px;
-      align-self: flex-end;
-      border-radius: var(--dl-radius-radius-inputradius);
-    }
-    .map-settings-input1 {
-      width: 100%;
-    }
-    .map-settings-text2 {
-      align-self: center;
-    }
-    .map-settings-select {
-      width: 250px;
-      align-self: center;
-    }
-    .map-settings-button1 {
-      width: 50%;
-      align-self: center;
+  .map-settings-text {
+    align-self: center;
+  }
+  .map-settings-text1 {
+    align-self: center;
+    text-align: center;
+  }
+  .map-settings-content1 {
+    flex-direction: column;
+  }
+  .map-settings-form {
+    width: 100%;
+  }
+  .map-settings-button {
+    font-size: 11px;
+    align-self: flex-end;
+    border-radius: var(--dl-radius-radius-inputradius);
+  }
+  .map-settings-input1 {
+    width: 100%;
+  }
+  .map-settings-text2 {
+    align-self: center;
+  }
+  .map-settings-select {
+    width: 250px;
+    align-self: center;
+  }
+  .map-settings-button1 {
+    width: 50%;
+    align-self: center;
+  }
+
+  .map-settings-button2 {
+    width: 65%;
+    align-self: center;
+  }
+
+    .map-settings-button:disabled{
+      cursor: none;
+      
     }
   }
   

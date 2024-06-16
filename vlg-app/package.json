@@ -1,17 +1,19 @@
 {
   "name": "vlg-app",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
     "@2gis/mapgl": "^1.47.1",
     "@2gis/mapgl-directions": "^2.0.3",
-    "@craco/craco": "^7.0.0-alpha.0",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "axios": "^1.7.2",
-    "prop-types": "15.7.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "prop-types": "^15.8.1",
+    "react": "^18.3.1",
+    "react-autosuggest": "^10.1.0",
+    "react-dom": "^18.3.1",
     "react-helmet": "^6.1.0",
-    "react-router-dom": "^5.2.0"
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
